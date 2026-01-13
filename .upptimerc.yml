@@ -13,15 +13,14 @@ sites:
 status-website:
   # Add your custom domain name, or remove the `cname` line if you don't have a domain
   # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  # cname: demo.upptime.js.org
-  baseUrl: /coral-statuspage
-  logoUrl: /coral-statuspage/coral-logo.svg
-  favicon: /coral-statuspage/coral-logo-512.png
-  faviconSvg: /coral-statuspage/coral-logo.svg
+  cname: status.coral.li
+  logoUrl: /coral-logo.svg
+  favicon: /coral-logo-512.png
+  faviconSvg: /coral-logo.svg
   name: Coral Status
   introTitle: "**Coral Status**"
   introMessage: Live uptime and incident updates for Coral services.
-  themeUrl: /coral-statuspage/coral-theme.css
+  themeUrl: /coral-theme.css
   navbar:
     - title: Status
       href: /
