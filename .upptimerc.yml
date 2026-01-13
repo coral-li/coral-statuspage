@@ -14,13 +14,13 @@ status-website:
   # Add your custom domain name, or remove the `cname` line if you don't have a domain
   # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
   cname: status.coral.li
-  logoUrl: https://status.coral.li/coral-logo.svg
-  favicon: https://status.coral.li/coral-logo-512.png
-  faviconSvg: https://status.coral.li/coral-logo.svg
+  logoUrl: https://raw.githubusercontent.com/coral-li/coral-statuspage/refs/heads/master/assets/coral-logo.svg
+  favicon: https://raw.githubusercontent.com/coral-li/coral-statuspage/refs/heads/master/assets/coral-logo-512.png
+  faviconSvg: https://raw.githubusercontent.com/coral-li/coral-statuspage/refs/heads/master/assets/coral-logo.svg
   name: Coral Status
   introTitle: "**Coral Status**"
   introMessage: Live uptime and incident updates for Coral services.
-  themeUrl: https://status.coral.li/coral-theme.css
+  themeUrl: https://raw.githubusercontent.com/coral-li/coral-statuspage/refs/heads/master/assets/coral-theme.css
   navbar:
     - title: Status
       href: /
