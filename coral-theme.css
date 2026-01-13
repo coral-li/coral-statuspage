@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap");
+
+:root {
+  --body-background-color: #f7f8f7;
+  --body-text-color: #202020;
+  --card-background-color: #ffffff;
+  --card-border-color: #d3d3d3;
+  --nav-background-color: #ffffff;
+  --nav-border-bottom-color: rgba(211, 211, 211, 0.7);
+  --nav-current-border-bottom-color: #4492ec;
+  --link-color: #3c5872;
+  --link-hover-color: #4492ec;
+  --up-border-left-color: #3cd583;
+  --down-border-left-color: #ef4444;
+  --degraded-border-left-color: #4492ec;
+  --tag-up-background-color: rgba(60, 213, 131, 0.16);
+  --tag-down-background-color: rgba(239, 68, 68, 0.14);
+  --tag-degraded-background-color: rgba(68, 146, 236, 0.16);
+}
+
+body {
+  background: radial-gradient(circle at top left, #e8f1f8 0%, transparent 45%),
+    radial-gradient(circle at 20% 10%, #e7f6ee 0%, transparent 40%),
+    linear-gradient(180deg, #f7f8f7 0%, #eff3f1 45%, #ffffff 100%);
+  color: var(--body-text-color);
+  font-family: "Plus Jakarta Sans", "Outfit", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+}
+
+h1,
+h2,
+h3,
+nav a {
+  font-family: "Outfit", "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--link-hover-color);
+}
+
+nav {
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 30px rgba(60, 88, 114, 0.08);
+}
+
+main {
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(60, 88, 114, 0.08);
+}
+
+section,
+article,
+.status {
+  border-radius: 18px;
+}
+
+.button,
+button,
+input[type="submit"] {
+  border-radius: 999px;
+  background: #3dd07e;
+  color: #0b1f14;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 20px rgba(60, 213, 131, 0.2);
+}
+
+footer {
+  color: #3c5872;
+}
