@@ -4,53 +4,59 @@
     "url": "https://www.coral.li/",
     "icon": "https://icons.duckduckgo.com/ip3/www.coral.li.ico",
     "slug": "coral",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 387,
-    "timeDay": 1089,
-    "timeWeek": 603,
-    "timeMonth": 387,
-    "timeYear": 387,
-    "dailyMinutesDown": {}
+    "time": 369,
+    "timeDay": 581,
+    "timeWeek": 537,
+    "timeMonth": 369,
+    "timeYear": 369,
+    "dailyMinutesDown": {
+      "2026-01-22": 0
+    }
   },
   {
     "name": "EMS",
     "url": "https://ems.coral.li/",
     "icon": "https://icons.duckduckgo.com/ip3/ems.coral.li.ico",
     "slug": "ems",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 315,
-    "timeDay": 282,
-    "timeWeek": 338,
-    "timeMonth": 315,
-    "timeYear": 315,
-    "dailyMinutesDown": {}
+    "time": 301,
+    "timeDay": 178,
+    "timeWeek": 305,
+    "timeMonth": 301,
+    "timeYear": 301,
+    "dailyMinutesDown": {
+      "2026-01-22": 0
+    }
   },
   {
     "name": "GCC EMS",
     "url": "https://gcc.ems.coral.li/",
     "icon": "https://icons.duckduckgo.com/ip3/gcc.ems.coral.li.ico",
     "slug": "gcc-ems",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 381,
-    "timeDay": 581,
-    "timeWeek": 328,
-    "timeMonth": 381,
-    "timeYear": 381,
-    "dailyMinutesDown": {}
+    "time": 367,
+    "timeDay": 364,
+    "timeWeek": 306,
+    "timeMonth": 367,
+    "timeYear": 367,
+    "dailyMinutesDown": {
+      "2026-01-22": 0
+    }
   }
 ]
