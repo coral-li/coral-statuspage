@@ -10,9 +10,8 @@ the template-generation step in Setup CI have therefore been removed: running
 `update-template` would overwrite these security fixes. Do not run that command
 against this repository without reviewing the generated diff.
 
-Dependabot proposes GitHub Actions updates for review. Keep major version tags
-where upstream publishes them. The Upptime monitor has no floating v1 tag, so
-use its latest verified release tag. When adopting new Upptime releases, compare
+Dependabot proposes GitHub Actions updates for review. Pin external Actions to full commit SHAs and keep the verified version tags
+in trailing comments. When adopting new Upptime releases, compare
 upstream `src/helpers/workflows.ts`, apply relevant template changes manually,
 and run the workflow checks before merging. Changes to monitored sites still
 belong in `.upptimerc.yml`; Setup CI still updates response times, README, graphs
