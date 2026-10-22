@@ -11,7 +11,7 @@
   "dependencies": {
     "@upptime/graphs": "1.2.33",
     "sharp": "^0.35.5",
-    "js-yaml": "^4.3.2"
+    "js-yaml": "^5.5.0"
   },
   "overrides": {
     "canvas": "^3.2.3",
