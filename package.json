@@ -1,0 +1,22 @@
+{
+  "name": "coral-statuspage-tooling",
+  "private": true,
+  "scripts": {
+    "test": "node --test scripts/graphs.test.cjs",
+    "graphs": "node scripts/update-graphs.cjs"
+  },
+  "engines": {
+    "node": ">=24.22.1 <25"
+  },
+  "dependencies": {
+    "@upptime/graphs": "1.2.33",
+    "sharp": "^0.35.5",
+    "js-yaml": "^4.3.2"
+  },
+  "overrides": {
+    "canvas": "^3.2.3",
+    "@octokit/plugin-paginate-rest": "^9.2.2",
+    "@octokit/request": "^8.4.1",
+    "@octokit/request-error": "^5.1.1"
+  }
+}

@@ -1,0 +1,25 @@
+name: Workflow checks
+on:
+  pull_request:
+  push:
+    paths:
+      - .github/**
+      - .nvmrc
+      - package*.json
+      - scripts/**
+permissions:
+  contents: read
+jobs:
+  workflows:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Validate GitHub Actions workflows
+        uses: docker://rhysd/actionlint:1.7.12
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm audit
