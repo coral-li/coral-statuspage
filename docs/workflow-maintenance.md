@@ -7,11 +7,29 @@ schedules and dispatch events. Node steps use the patched LTS in `.nvmrc`.
 Upptime 1.46.3 hard-codes Node 20 and older action versions in its workflow
 generator, with no configuration override. The automatic template updater and
 the template-generation step in Setup CI have therefore been removed: running
-`update-template` would overwrite these security fixes. Do not run that command
-against this repository without reviewing the generated diff.
+`update-template` would overwrite these security fixes and the locked action
+tags. Do not run that command against this repository.
 
-Dependabot proposes GitHub Actions updates for review. Pin external Actions to full commit SHAs and keep the verified version tags
-in trailing comments. When adopting new Upptime releases, compare
+Workflows reference exact action tags, and `.github/workflows/actions.lock`
+records the commit each tag resolved to. After changing any `uses:` line, run
+`gh extension install github/gh-actions-lock --pin v0.4.1` once, then
+`gh actions-lock`, and commit the workflow and lockfile together; never edit the
+lockfile by hand. Dependabot proposes GitHub Actions updates and regenerates
+the matching lockfile entries in the same pull request. The Workflow Security
+check (not a required check) runs `gh actions-lock --verify` and fails when the
+lockfile is stale or a locked tag has moved upstream. For a moved tag, review
+the upstream change, then run `gh actions-lock --relock`, or
+`gh actions-lock --accept-moved` if upstream rewrote history.
+
+If a GitHub App replaces `GH_PAT` (`GH_APP_ID` variable and
+`GH_APP_PRIVATE_KEY` secret), each workflow requests only the permissions its
+job uses: Contents write everywhere, Issues write for Uptime, Response Time,
+Summary and Setup, and Actions write for Setup. Grant the App all three, or
+token creation fails. Upptime's best-effort repository metadata updates, and
+possibly its deletion of short-lived status issues, need Administration and
+fail silently without it.
+
+When adopting new Upptime releases, compare
 upstream `src/helpers/workflows.ts`, apply relevant template changes manually,
 and run the workflow checks before merging. Changes to monitored sites still
 belong in `.upptimerc.yml`; Setup CI still updates response times, README, graphs
