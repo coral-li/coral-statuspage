@@ -7,19 +7,51 @@ on:
       - .nvmrc
       - package*.json
       - scripts/**
-permissions:
-  contents: read
+permissions: {}
 jobs:
   workflows:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
       - name: Validate GitHub Actions workflows
         uses: docker://rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667 # 1.7.12
-      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
       - run: npm test
       - run: npm audit
+
+  workflow_security:
+    name: Workflow Security
+    runs-on: ubuntu-slim
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      # Fails when .github/workflows/actions.lock is out of sync with the
+      # workflows, or a locked commit no longer verifies upstream.
+      - name: Verify the actions lockfile
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh extension install github/gh-actions-lock --pin v0.4.1
+          gh actions-lock --verify
+      - name: Audit workflows with zizmor
+        if: ${{ !cancelled() }}
+        uses: zizmorcore/zizmor-action@v0.8.1
+        # No `version:`: zizmor follows the release this locked action ships (1.32.0).
+        with:
+          advanced-security: false
+          annotations: true
+          # Low and informational findings are advisory.
+          min-severity: medium

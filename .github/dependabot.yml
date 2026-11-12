@@ -4,7 +4,9 @@ updates:
     directory: /
     schedule:
       interval: weekly
-  - package-ecosystem: npm
+    cooldown:
+      default-days: 6
+  - package-ecosystem: npm # zizmor: ignore[dependabot-cooldown] npm cadence is out of scope for the actions lockfile change
     directory: /
     schedule:
       interval: weekly
