@@ -22,7 +22,7 @@ jobs:
       - name: Create GitHub App token
         id: app_token
         if: ${{ vars.GH_APP_ID != '' && env.GH_APP_PRIVATE_KEY != '' }}
-        uses: actions/create-github-app-token@v3.3.0
+        uses: actions/create-github-app-token@v3.4.0
         with:
           app-id: ${{ vars.GH_APP_ID }}
           private-key: ${{ env.GH_APP_PRIVATE_KEY }}
